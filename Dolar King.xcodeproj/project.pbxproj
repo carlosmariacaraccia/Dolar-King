@@ -45,6 +45,7 @@
 		1F018453257978A600EE1E53 /* Dolar KingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dolar KingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F018457257978A600EE1E53 /* Dolar_KingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dolar_KingUITests.swift; sourceTree = "<group>"; };
 		1F018459257978A600EE1E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F0184682579790500EE1E53 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 		1F01842E257978A200EE1E53 = {
 			isa = PBXGroup;
 			children = (
+				1F0184682579790500EE1E53 /* README.md */,
 				1F018439257978A300EE1E53 /* Dolar King */,
 				1F01844B257978A600EE1E53 /* Dolar KingTests */,
 				1F018456257978A600EE1E53 /* Dolar KingUITests */,
