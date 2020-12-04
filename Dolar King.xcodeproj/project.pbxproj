@@ -13,6 +13,14 @@
 		1F018442257978A500EE1E53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F018441257978A500EE1E53 /* Preview Assets.xcassets */; };
 		1F01844D257978A600EE1E53 /* Dolar_KingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01844C257978A600EE1E53 /* Dolar_KingTests.swift */; };
 		1F018458257978A600EE1E53 /* Dolar_KingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F018457257978A600EE1E53 /* Dolar_KingUITests.swift */; };
+		1F01846D2579A38900EE1E53 /* Cotizacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01846C2579A38900EE1E53 /* Cotizacion.swift */; };
+		1F0184722579A3AE00EE1E53 /* BuscadorDeCotizaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0184712579A3AE00EE1E53 /* BuscadorDeCotizaciones.swift */; };
+		1F700B55257AAEC0000F496B /* OCR-ABT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B50257AAEA0000F496B /* OCR-ABT.ttf */; };
+		1F700B56257AAEC0000F496B /* ocr-a bt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B52257AAEA0000F496B /* ocr-a bt.ttf */; };
+		1F700B57257AAEC0000F496B /* OCR-A Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B51257AAEA0000F496B /* OCR-A Regular.ttf */; };
+		1F700B58257AAEC0000F496B /* ocr-aregular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B54257AAEA0000F496B /* ocr-aregular.ttf */; };
+		1F700B59257AAEC0000F496B /* OCR-A.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B53257AAEA0000F496B /* OCR-A.ttf */; };
+		1F700B5E257ABD36000F496B /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F700B5D257ABD36000F496B /* FoundationExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +54,14 @@
 		1F018457257978A600EE1E53 /* Dolar_KingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dolar_KingUITests.swift; sourceTree = "<group>"; };
 		1F018459257978A600EE1E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F0184682579790500EE1E53 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1F01846C2579A38900EE1E53 /* Cotizacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cotizacion.swift; sourceTree = "<group>"; };
+		1F0184712579A3AE00EE1E53 /* BuscadorDeCotizaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscadorDeCotizaciones.swift; sourceTree = "<group>"; };
+		1F700B50257AAEA0000F496B /* OCR-ABT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR-ABT.ttf"; sourceTree = "<group>"; };
+		1F700B51257AAEA0000F496B /* OCR-A Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR-A Regular.ttf"; sourceTree = "<group>"; };
+		1F700B52257AAEA0000F496B /* ocr-a bt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ocr-a bt.ttf"; sourceTree = "<group>"; };
+		1F700B53257AAEA0000F496B /* OCR-A.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR-A.ttf"; sourceTree = "<group>"; };
+		1F700B54257AAEA0000F496B /* ocr-aregular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ocr-aregular.ttf"; sourceTree = "<group>"; };
+		1F700B5D257ABD36000F496B /* FoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +113,15 @@
 		1F018439257978A300EE1E53 /* Dolar King */ = {
 			isa = PBXGroup;
 			children = (
+				1F700B4F257AAE97000F496B /* Fonts */,
 				1F01843A257978A300EE1E53 /* Dolar_KingApp.swift */,
 				1F01843C257978A300EE1E53 /* ContentView.swift */,
+				1F0184712579A3AE00EE1E53 /* BuscadorDeCotizaciones.swift */,
+				1F01846C2579A38900EE1E53 /* Cotizacion.swift */,
 				1F01843E257978A500EE1E53 /* Assets.xcassets */,
 				1F018443257978A500EE1E53 /* Info.plist */,
 				1F018440257978A500EE1E53 /* Preview Content */,
+				1F700B5D257ABD36000F496B /* FoundationExtensions.swift */,
 			);
 			path = "Dolar King";
 			sourceTree = "<group>";
@@ -130,6 +150,18 @@
 				1F018459257978A600EE1E53 /* Info.plist */,
 			);
 			path = "Dolar KingUITests";
+			sourceTree = "<group>";
+		};
+		1F700B4F257AAE97000F496B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1F700B52257AAEA0000F496B /* ocr-a bt.ttf */,
+				1F700B51257AAEA0000F496B /* OCR-A Regular.ttf */,
+				1F700B53257AAEA0000F496B /* OCR-A.ttf */,
+				1F700B50257AAEA0000F496B /* OCR-ABT.ttf */,
+				1F700B54257AAEA0000F496B /* ocr-aregular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +267,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F700B57257AAEC0000F496B /* OCR-A Regular.ttf in Resources */,
+				1F700B56257AAEC0000F496B /* ocr-a bt.ttf in Resources */,
+				1F700B58257AAEC0000F496B /* ocr-aregular.ttf in Resources */,
+				1F700B55257AAEC0000F496B /* OCR-ABT.ttf in Resources */,
 				1F018442257978A500EE1E53 /* Preview Assets.xcassets in Resources */,
+				1F700B59257AAEC0000F496B /* OCR-A.ttf in Resources */,
 				1F01843F257978A500EE1E53 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,7 +299,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F01843D257978A300EE1E53 /* ContentView.swift in Sources */,
+				1F700B5E257ABD36000F496B /* FoundationExtensions.swift in Sources */,
 				1F01843B257978A300EE1E53 /* Dolar_KingApp.swift in Sources */,
+				1F0184722579A3AE00EE1E53 /* BuscadorDeCotizaciones.swift in Sources */,
+				1F01846D2579A38900EE1E53 /* Cotizacion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
