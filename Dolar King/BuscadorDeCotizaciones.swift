@@ -9,8 +9,6 @@
 import SwiftUI
 import Combine
 
-
-
 // View Model
 class BuscadorDeCotizaciones:ObservableObject {
     
