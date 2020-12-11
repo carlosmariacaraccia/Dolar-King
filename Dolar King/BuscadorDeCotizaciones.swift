@@ -30,4 +30,3 @@ class BuscadorDeCotizaciones:ObservableObject {
     }
     
 }
-

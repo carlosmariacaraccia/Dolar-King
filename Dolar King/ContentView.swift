@@ -21,7 +21,6 @@ struct CotizacionesCell:View {
         guard let nombreCotizacion = cotizacion.casa?.nombre else { return (nil, nil) }
         
         if nombreCotizacion.contains("Liqui") {
-            print(nombreCotizacion)
             return (UIImage(named: "blueUIPaycheque80"), "CCL")
         }
         if nombreCotizacion.contains("Blue") {
@@ -45,7 +44,7 @@ struct CotizacionesCell:View {
         } else  {
             HStack(spacing:30) {
                 
-                HStack(spacing:3) {
+                HStack {
                     
                     Image(uiImage: (cotizacionSelector(cotizacion: cotizacion).0 ?? UIImage(systemName: "rectangle"))!)
                         .resizable()
@@ -56,16 +55,18 @@ struct CotizacionesCell:View {
                         .foregroundColor(.black)
                         .opacity(0.6)
                 }
-                
-                HStack(spacing: 10) {
+                Spacer()
+                HStack {
+                    VStack {
+                        Text("\(cotizacion.casa?.compra ?? "downloading")")
+                        Text("\(cotizacion.casa?.venta ?? "downloading")")
+                    }
+                    .foregroundColor(.black)
+                    .opacity(0.6)
                     
-                    Text("\(cotizacion.casa?.compra ?? "downloading") - \(cotizacion.casa?.venta ?? "downloading")" )
-                        .foregroundColor(.black)
-                        .opacity(0.6)
-                    
-                    Text("\(cotizacion.casa?.variacion ?? "downloading")")
-                        .foregroundColor(.green)
-                        .opacity(0.6)
+                    Text("\(checkForDecimalsInVariacion(variacion:cotizacion.casa?.variacion) )")
+                        .foregroundColor(checkForDecimalsInVariacion(variacion:cotizacion.casa?.variacion).contains("-") ? .red : .green)
+                        .opacity(0.9)
                 }
                 .font(.custom("OCR-A", size: 15))
             }
@@ -74,10 +75,26 @@ struct CotizacionesCell:View {
             .background(Color(hex:"F2F6FF"))
             .cornerRadius(10)
             .shadow(color: Color(hex:"EFF1F5"), radius: 4, x:0.0 , y: 8)
-            
         }
         
     }
+    
+    private func checkForDecimalsInVariacion(variacion:String?) -> String {
+        if variacion!.count < 5 {
+            if variacion!.count == 1 {
+                return "0,000"
+            } else {
+                var appending:String = variacion!
+                for _ in (1...(5-variacion!.count)) {
+                    appending.append("0")
+                }
+                return appending
+            }
+        } else {
+            return variacion!
+        }
+    }
+
     
 }
 
@@ -96,14 +113,16 @@ struct ContentView: View {
                     .frame(width:300, height:250)
                 
                 Text("Ultimos Valores")
-                    .font(.custom("OCR-A", size: 25))
+                    .font(.custom("OCR-A", size: 35))
                     .shadow(color: .black, radius: 4, x: 0.0, y: 4)
                     .offset(y: -20)
                     .opacity(0.6)
             }
-            
-            List(buscadorDeCotizaciones.cotizaciones, id:\.self.casa!.nombre) { cotizacion in
-                CotizacionesCell(cotizacion: cotizacion)
+            ScrollView {
+                ForEach(buscadorDeCotizaciones.cotizaciones, id:\.self.casa!.nombre) { cotizacion in
+                    CotizacionesCell(cotizacion: cotizacion)
+                        .padding(10)
+                }
             }
         }
         .onAppear(perform: {
