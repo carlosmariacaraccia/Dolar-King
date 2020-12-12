@@ -21,6 +21,10 @@
 		1F700B58257AAEC0000F496B /* ocr-aregular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B54257AAEA0000F496B /* ocr-aregular.ttf */; };
 		1F700B59257AAEC0000F496B /* OCR-A.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B53257AAEA0000F496B /* OCR-A.ttf */; };
 		1F700B5E257ABD36000F496B /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F700B5D257ABD36000F496B /* FoundationExtensions.swift */; };
+		1FA0F90C2583E5F700865D8C /* KeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA0F90B2583E5F700865D8C /* KeypadView.swift */; };
+		1FA848F42583853B0072C597 /* CotizacionesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA848F32583853B0072C597 /* CotizacionesCellView.swift */; };
+		1FA848F9258386DD0072C597 /* ConversionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA848F8258386DD0072C597 /* ConversionView.swift */; };
+		1FA849012583BA5D0072C597 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA849002583BA5C0072C597 /* InformationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,10 @@
 		1F700B53257AAEA0000F496B /* OCR-A.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR-A.ttf"; sourceTree = "<group>"; };
 		1F700B54257AAEA0000F496B /* ocr-aregular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ocr-aregular.ttf"; sourceTree = "<group>"; };
 		1F700B5D257ABD36000F496B /* FoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		1FA0F90B2583E5F700865D8C /* KeypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadView.swift; sourceTree = "<group>"; };
+		1FA848F32583853B0072C597 /* CotizacionesCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CotizacionesCellView.swift; sourceTree = "<group>"; };
+		1FA848F8258386DD0072C597 /* ConversionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionView.swift; sourceTree = "<group>"; };
+		1FA849002583BA5C0072C597 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +123,7 @@
 			children = (
 				1F700B4F257AAE97000F496B /* Fonts */,
 				1F01843A257978A300EE1E53 /* Dolar_KingApp.swift */,
-				1F01843C257978A300EE1E53 /* ContentView.swift */,
+				1FA849052583BC420072C597 /* Views */,
 				1F0184712579A3AE00EE1E53 /* BuscadorDeCotizaciones.swift */,
 				1F01846C2579A38900EE1E53 /* Cotizacion.swift */,
 				1F01843E257978A500EE1E53 /* Assets.xcassets */,
@@ -162,6 +170,26 @@
 				1F700B54257AAEA0000F496B /* ocr-aregular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1FA849052583BC420072C597 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1F01843C257978A300EE1E53 /* ContentView.swift */,
+				1FA849062583BC5A0072C597 /* Information View */,
+				1FA848F8258386DD0072C597 /* ConversionView.swift */,
+				1FA0F90B2583E5F700865D8C /* KeypadView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1FA849062583BC5A0072C597 /* Information View */ = {
+			isa = PBXGroup;
+			children = (
+				1FA849002583BA5C0072C597 /* InformationView.swift */,
+				1FA848F32583853B0072C597 /* CotizacionesCellView.swift */,
+			);
+			path = "Information View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,9 +327,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F01843D257978A300EE1E53 /* ContentView.swift in Sources */,
+				1FA849012583BA5D0072C597 /* InformationView.swift in Sources */,
+				1FA0F90C2583E5F700865D8C /* KeypadView.swift in Sources */,
 				1F700B5E257ABD36000F496B /* FoundationExtensions.swift in Sources */,
 				1F01843B257978A300EE1E53 /* Dolar_KingApp.swift in Sources */,
+				1FA848F42583853B0072C597 /* CotizacionesCellView.swift in Sources */,
 				1F0184722579A3AE00EE1E53 /* BuscadorDeCotizaciones.swift in Sources */,
+				1FA848F9258386DD0072C597 /* ConversionView.swift in Sources */,
 				1F01846D2579A38900EE1E53 /* Cotizacion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

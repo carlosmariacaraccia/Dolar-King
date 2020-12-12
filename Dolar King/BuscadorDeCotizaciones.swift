@@ -23,7 +23,7 @@ class BuscadorDeCotizaciones:ObservableObject {
         self.cancellable = URLSession.shared.dataTaskPublisher(for: dolarSiUrl!)
             .map { $0.data }
             .decode(type:[Cotizacion].self, decoder:JSONDecoder())
-            .replaceError(with:[])
+            .replaceError(with: [])
             .eraseToAnyPublisher()
             .receive(on: RunLoop.main)
             .assign(to: \.cotizaciones, on: self)
