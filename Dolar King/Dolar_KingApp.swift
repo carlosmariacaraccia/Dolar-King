@@ -11,7 +11,7 @@ import SwiftUI
 struct Dolar_KingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }

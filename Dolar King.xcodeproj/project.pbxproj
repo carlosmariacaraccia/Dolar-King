@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1F01843B257978A300EE1E53 /* Dolar_KingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01843A257978A300EE1E53 /* Dolar_KingApp.swift */; };
-		1F01843D257978A300EE1E53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01843C257978A300EE1E53 /* ContentView.swift */; };
-		1F01843F257978A500EE1E53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F01843E257978A500EE1E53 /* Assets.xcassets */; };
+		1F01843D257978A300EE1E53 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01843C257978A300EE1E53 /* MainView.swift */; };
 		1F018442257978A500EE1E53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F018441257978A500EE1E53 /* Preview Assets.xcassets */; };
 		1F01844D257978A600EE1E53 /* Dolar_KingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01844C257978A600EE1E53 /* Dolar_KingTests.swift */; };
 		1F018458257978A600EE1E53 /* Dolar_KingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F018457257978A600EE1E53 /* Dolar_KingUITests.swift */; };
 		1F01846D2579A38900EE1E53 /* Cotizacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01846C2579A38900EE1E53 /* Cotizacion.swift */; };
 		1F0184722579A3AE00EE1E53 /* BuscadorDeCotizaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0184712579A3AE00EE1E53 /* BuscadorDeCotizaciones.swift */; };
+		1F24EDDE2587B85100C2D0E9 /* KeypadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F24EDDD2587B85100C2D0E9 /* KeypadModel.swift */; };
+		1F24EDE32587B87900C2D0E9 /* KeypadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F24EDE22587B87900C2D0E9 /* KeypadViewModel.swift */; };
+		1F24EDEB2587BE5400C2D0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F24EDEA2587BE5400C2D0E9 /* Assets.xcassets */; };
 		1F700B55257AAEC0000F496B /* OCR-ABT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B50257AAEA0000F496B /* OCR-ABT.ttf */; };
 		1F700B56257AAEC0000F496B /* ocr-a bt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B52257AAEA0000F496B /* ocr-a bt.ttf */; };
 		1F700B57257AAEC0000F496B /* OCR-A Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B51257AAEA0000F496B /* OCR-A Regular.ttf */; };
@@ -47,8 +49,7 @@
 /* Begin PBXFileReference section */
 		1F018437257978A300EE1E53 /* Dolar King.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dolar King.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F01843A257978A300EE1E53 /* Dolar_KingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dolar_KingApp.swift; sourceTree = "<group>"; };
-		1F01843C257978A300EE1E53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		1F01843E257978A500EE1E53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F01843C257978A300EE1E53 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1F018441257978A500EE1E53 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1F018443257978A500EE1E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F018448257978A600EE1E53 /* Dolar KingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dolar KingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +61,9 @@
 		1F0184682579790500EE1E53 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1F01846C2579A38900EE1E53 /* Cotizacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cotizacion.swift; sourceTree = "<group>"; };
 		1F0184712579A3AE00EE1E53 /* BuscadorDeCotizaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscadorDeCotizaciones.swift; sourceTree = "<group>"; };
+		1F24EDDD2587B85100C2D0E9 /* KeypadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadModel.swift; sourceTree = "<group>"; };
+		1F24EDE22587B87900C2D0E9 /* KeypadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadViewModel.swift; sourceTree = "<group>"; };
+		1F24EDEA2587BE5400C2D0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F700B50257AAEA0000F496B /* OCR-ABT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR-ABT.ttf"; sourceTree = "<group>"; };
 		1F700B51257AAEA0000F496B /* OCR-A Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR-A Regular.ttf"; sourceTree = "<group>"; };
 		1F700B52257AAEA0000F496B /* ocr-a bt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ocr-a bt.ttf"; sourceTree = "<group>"; };
@@ -123,13 +127,13 @@
 			children = (
 				1F700B4F257AAE97000F496B /* Fonts */,
 				1F01843A257978A300EE1E53 /* Dolar_KingApp.swift */,
-				1FA849052583BC420072C597 /* Views */,
-				1F0184712579A3AE00EE1E53 /* BuscadorDeCotizaciones.swift */,
-				1F01846C2579A38900EE1E53 /* Cotizacion.swift */,
-				1F01843E257978A500EE1E53 /* Assets.xcassets */,
-				1F018443257978A500EE1E53 /* Info.plist */,
-				1F018440257978A500EE1E53 /* Preview Content */,
 				1F700B5D257ABD36000F496B /* FoundationExtensions.swift */,
+				1FA849052583BC420072C597 /* Views */,
+				1F24EDEF2587D35000C2D0E9 /* View Model */,
+				1F24EDF32587D36600C2D0E9 /* Models */,
+				1F018443257978A500EE1E53 /* Info.plist */,
+				1F24EDEA2587BE5400C2D0E9 /* Assets.xcassets */,
+				1F018440257978A500EE1E53 /* Preview Content */,
 			);
 			path = "Dolar King";
 			sourceTree = "<group>";
@@ -160,6 +164,33 @@
 			path = "Dolar KingUITests";
 			sourceTree = "<group>";
 		};
+		1F24EDEF2587D35000C2D0E9 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F0184712579A3AE00EE1E53 /* BuscadorDeCotizaciones.swift */,
+				1F24EDE22587B87900C2D0E9 /* KeypadViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		1F24EDF32587D36600C2D0E9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1F01846C2579A38900EE1E53 /* Cotizacion.swift */,
+				1F24EDDD2587B85100C2D0E9 /* KeypadModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1F24EDF42587D37A00C2D0E9 /* Conversion Views */ = {
+			isa = PBXGroup;
+			children = (
+				1FA848F8258386DD0072C597 /* ConversionView.swift */,
+				1FA0F90B2583E5F700865D8C /* KeypadView.swift */,
+			);
+			path = "Conversion Views";
+			sourceTree = "<group>";
+		};
 		1F700B4F257AAE97000F496B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,10 +206,9 @@
 		1FA849052583BC420072C597 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1F01843C257978A300EE1E53 /* ContentView.swift */,
+				1F01843C257978A300EE1E53 /* MainView.swift */,
 				1FA849062583BC5A0072C597 /* Information View */,
-				1FA848F8258386DD0072C597 /* ConversionView.swift */,
-				1FA0F90B2583E5F700865D8C /* KeypadView.swift */,
+				1F24EDF42587D37A00C2D0E9 /* Conversion Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,9 +329,9 @@
 				1F700B56257AAEC0000F496B /* ocr-a bt.ttf in Resources */,
 				1F700B58257AAEC0000F496B /* ocr-aregular.ttf in Resources */,
 				1F700B55257AAEC0000F496B /* OCR-ABT.ttf in Resources */,
+				1F24EDEB2587BE5400C2D0E9 /* Assets.xcassets in Resources */,
 				1F018442257978A500EE1E53 /* Preview Assets.xcassets in Resources */,
 				1F700B59257AAEC0000F496B /* OCR-A.ttf in Resources */,
-				1F01843F257978A500EE1E53 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,8 +356,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F01843D257978A300EE1E53 /* ContentView.swift in Sources */,
+				1F01843D257978A300EE1E53 /* MainView.swift in Sources */,
+				1F24EDDE2587B85100C2D0E9 /* KeypadModel.swift in Sources */,
 				1FA849012583BA5D0072C597 /* InformationView.swift in Sources */,
+				1F24EDE32587B87900C2D0E9 /* KeypadViewModel.swift in Sources */,
 				1FA0F90C2583E5F700865D8C /* KeypadView.swift in Sources */,
 				1F700B5E257ABD36000F496B /* FoundationExtensions.swift in Sources */,
 				1F01843B257978A300EE1E53 /* Dolar_KingApp.swift in Sources */,

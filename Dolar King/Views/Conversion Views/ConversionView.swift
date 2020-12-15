@@ -19,10 +19,10 @@ enum tipoDeDolar {
 
 struct ConversionView: View {
     
+    @EnvironmentObject var displayShower:DisplayShower
     @State private var cotizaciones:[Cotizacion]
     
     @State private var chooseExchangeToConvert:String = "Pesos to USD"
-    @State private var amountToConvert:String = "0.0"
     private let exchangeCurrencySelection:[String] = ["Pesos to USD", "USD to Pesos"]
     
     init(cotizaciones:[Cotizacion]) {
@@ -30,15 +30,16 @@ struct ConversionView: View {
     }
     
     var body: some View {
+        
         VStack {
+            Spacer()
             Text("Exchange selector")
-                .font(.custom("OCR-A", size: 20))
+                .font(.system(size: 20))
                 .opacity(0.7)
-            
             Picker(selection: $chooseExchangeToConvert, label: Text("")) {
                 ForEach(exchangeCurrencySelection, id:\.self) { currency in
                     Text(currency)
-                        .font(.custom("OCR-A", size: 8))
+                        .font(.system( size: 8))
                         .opacity(0.5)
                 }
             }
@@ -46,46 +47,57 @@ struct ConversionView: View {
             .background(Color.init(hex: "DFF0FE").opacity(0.6))
             .foregroundColor(Color.init(hex: "DFF0FE").opacity(0.6))
             .opacity(0.7)
-            
+            .padding(10)
             HStack {
                 Text(chooseExchangeToConvert == "Pesos to USD" ? "ARS" : "USD")
-                TextField("0", text: $amountToConvert)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .keyboardType(.decimalPad)
-                    .multilineTextAlignment(.trailing)
+                Spacer()
+                Text(displayShower.display)
             }
             .opacity(0.7)
-            .font(.custom("OCR-A", size: 40))
-            
+            .font(.system(size: 40))
+            Spacer()
             VStack {
                 HStack {
                     Image("blueUICrown80")
                         .resizable()
-                        .frame(width: 60, height: 60, alignment: .center)
-                    Text("Oficial")
-                        .font(.custom("OCR-A", size: 30))
+                        .frame(width: 40, height: 40, alignment: .center)
+                    Text("Oficial \(chooseExchangeToConvert == "Pesos to USD" ? "USD" : "ARS")")
+                        .font(.system( size: 20))
                         .opacity(0.7)
                     Spacer()
-                    Text("Hola")
-                        .font(.custom("OCR-A", size: 30))
+                    Text(convertCotizacion(amount: displayShower.display, fromPesosToUSD: chooseExchangeToConvert, tipo: .oficial) )
+                        .font(.system( size: 30))
                         .opacity(0.7)
                 }
                 HStack {
                     Image("blueUIMoney80")
                         .resizable()
-                        .frame(width: 60, height: 60, alignment: .center)
-                    Text("Blue")
-                        .font(.custom("OCR-A", size: 30))
+                        .frame(width: 40, height: 40, alignment: .center)
+                    Text("Blue \(chooseExchangeToConvert == "Pesos to USD" ? "USD" : "ARS")")
+                        .font(.system( size: 20))
                         .opacity(0.7)
                     Spacer()
-                    Text("54.22")
-                        .font(.custom("OCR-A", size: 30))
+                    Text(convertCotizacion(amount: displayShower.display, fromPesosToUSD: chooseExchangeToConvert, tipo: .blue))
+                        .font(.system( size: 30))
                         .opacity(0.7)
                 }
             }
-            KeypadView()
+            Spacer()
+            KeypadView().environmentObject(displayShower)
         }
         .padding()
+    }
+    
+    private func convertCotizacion(amount:String, fromPesosToUSD:String, tipo:tipoDeDolar) -> String {
+        let amountInDouble:Double = Double(amount) ?? 0.00
+        if fromPesosToUSD == "Pesos to USD" {
+            let convertedAmount = amountInDouble / convertCotizacionesToDouble(cotizaciones: cotizaciones, tipoDeCotizacion: .venta, tipoDeDolar: tipo)!
+            return String(format: "%.2f", convertedAmount)
+        } else {
+            let convertedAmount = convertCotizacionesToDouble(cotizaciones: cotizaciones, tipoDeCotizacion: .venta, tipoDeDolar: tipo)!*amountInDouble
+            return String(format: "%.2f", convertedAmount)
+        }
+        
     }
     
     private func convertCotizacionesToDouble(cotizaciones:[Cotizacion],tipoDeCotizacion:tipoDeCotizacion, tipoDeDolar:tipoDeDolar) -> Double? {
@@ -103,7 +115,7 @@ struct ConversionView: View {
             case .blue:
                 return Double(cotizaciones.filter{($0.casa?.nombre?.contains("Blue") ?? false)}.map{$0.casa?.venta ?? "no value"}.first?.replacingOccurrences(of: ",", with: ".") ?? "no value")
             case .oficial:
-                return Double(cotizaciones.filter{($0.casa?.nombre?.contains("Bfi") ?? false)}.map{$0.casa?.venta ?? "no value"}.first?.replacingOccurrences(of: ",", with: ".") ?? "no value")
+                return Double(cotizaciones.filter{($0.casa?.nombre?.contains("Ofi") ?? false)}.map{$0.casa?.venta ?? "no value"}.first?.replacingOccurrences(of: ",", with: ".") ?? "no value")
             }
             
         }
@@ -113,6 +125,6 @@ struct ConversionView: View {
 
 struct ConversionView_Previews: PreviewProvider {
     static var previews: some View {
-        ConversionView(cotizaciones: [Cotizacion]())
+        ConversionView(cotizaciones: [Cotizacion]()).environmentObject(DisplayShower())
     }
 }

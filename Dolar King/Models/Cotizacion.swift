@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct Cotizacion:Codable {
 
     let casa:Casa?

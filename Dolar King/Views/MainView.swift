@@ -7,50 +7,28 @@
 
 import SwiftUI
 import Combine
-    
-struct ContentView: View {
+
+struct MainView: View {
     
     @StateObject var buscadorDeCotizaciones = BuscadorDeCotizaciones()
     
     var body: some View {
-        
         TabView {
-            VStack(spacing:30) {
-                
-                ZStack(alignment: .bottom) {
-                    
-                    Image("stockGraph")
-                        .resizable()
-                        .frame(width:300, height:250)
-                    
-                    Text("Ultimos Valores")
-                        .font(.custom("OCR-A", size: 35))
-                        .shadow(color: .black, radius: 4, x: 0.0, y: 4)
-                        .offset(y: -20)
-                        .opacity(0.6)
-                }
-                ScrollView {
-                    ForEach(buscadorDeCotizaciones.cotizaciones, id:\.self.casa!.nombre) { cotizacion in
-                        CotizacionesCell(cotizacion: cotizacion)
-                            .padding(10)
-                    }
-                }
-            }
+            InformationView(cotizationes: buscadorDeCotizaciones.cotizaciones)
                 .tabItem {
                     Image("graph25")
                         .renderingMode(.template)
                         .padding()
                     Text("Information")
-                    
                 }
             ConversionView(cotizaciones: buscadorDeCotizaciones.cotizaciones)
+                .environmentObject(DisplayShower())
                 .tabItem {
                     Image("calculator25")
                         .renderingMode(.template)
                         .padding()
                     Text("Conversion")
                 }
-
         }
         .onAppear(perform: {
             buscadorDeCotizaciones.getCotizaciones()
@@ -60,6 +38,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }

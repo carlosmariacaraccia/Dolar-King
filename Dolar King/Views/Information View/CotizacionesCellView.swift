@@ -13,7 +13,6 @@ struct CotizacionesCell:View {
     
     init (cotizacion:Cotizacion) {
         self._cotizacion = State(wrappedValue: cotizacion)
-        print(cotizacion)
     }
     
     private func cotizacionSelector(cotizacion:Cotizacion) -> (UIImage?,String?) {
@@ -49,7 +48,7 @@ struct CotizacionesCell:View {
                         .frame(width:40, height: 40)
                     
                     Text(cotizacionSelector(cotizacion: cotizacion).1 ?? "downloading")
-                        .font(.custom("OCR-A", size: 20))
+                        .font(.system(size: 20))
                         .foregroundColor(.black)
                         .opacity(0.6)
                 }
@@ -66,7 +65,7 @@ struct CotizacionesCell:View {
                         .foregroundColor(checkForDecimalsInVariacion(variacion:cotizacion.casa?.variacion).contains("-") ? .red : .green)
                         .opacity(0.9)
                 }
-                .font(.custom("OCR-A", size: 15))
+                .font(.system(size: 15))
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 5)
