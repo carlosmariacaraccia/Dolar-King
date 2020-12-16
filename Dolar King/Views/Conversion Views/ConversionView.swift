@@ -20,13 +20,13 @@ enum tipoDeDolar {
 struct ConversionView: View {
     
     @EnvironmentObject var displayShower:DisplayShower
-    @State private var cotizaciones:[Cotizacion]
+    @State private var currencies:[CurrencyObject]
     
     @State private var chooseExchangeToConvert:String = "Pesos to USD"
     private let exchangeCurrencySelection:[String] = ["Pesos to USD", "USD to Pesos"]
     
-    init(cotizaciones:[Cotizacion]) {
-        _cotizaciones = State(wrappedValue: cotizaciones)
+    init(currencies:[CurrencyObject]) {
+        _currencies = State(wrappedValue: currencies)
     }
     
     var body: some View {
@@ -65,7 +65,7 @@ struct ConversionView: View {
                         .font(.system( size: 20))
                         .opacity(0.7)
                     Spacer()
-                    Text(convertCotizacion(amount: displayShower.display, fromPesosToUSD: chooseExchangeToConvert, tipo: .oficial) )
+                    Text(convertMoney(amount: displayShower.display, fromPesosToUSD: chooseExchangeToConvert, tipoDeDolar: .oficial, currencies: currencies))
                         .font(.system( size: 30))
                         .opacity(0.7)
                 }
@@ -77,7 +77,7 @@ struct ConversionView: View {
                         .font(.system( size: 20))
                         .opacity(0.7)
                     Spacer()
-                    Text(convertCotizacion(amount: displayShower.display, fromPesosToUSD: chooseExchangeToConvert, tipo: .blue))
+                    Text(convertMoney(amount: displayShower.display, fromPesosToUSD: chooseExchangeToConvert, tipoDeDolar: .blue, currencies: currencies))
                         .font(.system( size: 30))
                         .opacity(0.7)
                 }
@@ -88,43 +88,33 @@ struct ConversionView: View {
         .padding()
     }
     
-    private func convertCotizacion(amount:String, fromPesosToUSD:String, tipo:tipoDeDolar) -> String {
+    private func convertMoney(amount:String, fromPesosToUSD:String, tipoDeDolar:tipoDeDolar, currencies:[CurrencyObject]) -> String {
         let amountInDouble:Double = Double(amount) ?? 0.00
         if fromPesosToUSD == "Pesos to USD" {
-            let convertedAmount = amountInDouble / convertCotizacionesToDouble(cotizaciones: cotizaciones, tipoDeCotizacion: .venta, tipoDeDolar: tipo)!
-            return String(format: "%.2f", convertedAmount)
+            switch tipoDeDolar {
+            case .blue:
+                let result = amountInDouble / currencies.filter{$0.name!.contains("Blue")}.first!.sellPrice!
+                return String(format: "%.2f", result)
+            case .oficial:
+                let result = amountInDouble / currencies.filter{$0.name!.contains("ofi")}.first!.sellPrice!
+                return String(format: "%.2f", result)
+            }
         } else {
-            let convertedAmount = convertCotizacionesToDouble(cotizaciones: cotizaciones, tipoDeCotizacion: .venta, tipoDeDolar: tipo)!*amountInDouble
-            return String(format: "%.2f", convertedAmount)
-        }
-        
-    }
-    
-    private func convertCotizacionesToDouble(cotizaciones:[Cotizacion],tipoDeCotizacion:tipoDeCotizacion, tipoDeDolar:tipoDeDolar) -> Double? {
-        
-        switch tipoDeCotizacion {
-        case .compra:
             switch tipoDeDolar {
             case .blue:
-                return Double(cotizaciones.filter{($0.casa?.nombre?.contains("Blue") ?? false)}.map{$0.casa?.compra ?? "no value"}.first?.replacingOccurrences(of: ",", with: ".") ?? "no value")
+                let result = amountInDouble * currencies.filter{$0.name!.contains("Blue")}.first!.buyPrice!
+                return String(format: "%.2f", result)
             case .oficial:
-                return Double(cotizaciones.filter{($0.casa?.nombre?.contains("Ofi") ?? false)}.map{$0.casa?.compra ?? "no value"}.first?.replacingOccurrences(of: ",", with: ".") ?? "no value")
+                let result = amountInDouble * currencies.filter{$0.name!.contains("ofi")}.first!.buyPrice!
+                return String(format: "%.2f", result)
             }
-        case .venta:
-            switch tipoDeDolar {
-            case .blue:
-                return Double(cotizaciones.filter{($0.casa?.nombre?.contains("Blue") ?? false)}.map{$0.casa?.venta ?? "no value"}.first?.replacingOccurrences(of: ",", with: ".") ?? "no value")
-            case .oficial:
-                return Double(cotizaciones.filter{($0.casa?.nombre?.contains("Ofi") ?? false)}.map{$0.casa?.venta ?? "no value"}.first?.replacingOccurrences(of: ",", with: ".") ?? "no value")
-            }
-            
+
         }
     }
-    
 }
 
 struct ConversionView_Previews: PreviewProvider {
     static var previews: some View {
-        ConversionView(cotizaciones: [Cotizacion]()).environmentObject(DisplayShower())
+        ConversionView(currencies: [CurrencyObject]()).environmentObject(DisplayShower())
     }
 }

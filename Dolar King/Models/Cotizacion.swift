@@ -19,3 +19,14 @@ struct Cotizacion:Codable {
     }
 
 }
+
+// Custom object for parsing
+struct CurrencyObject {
+    
+    let name:String?
+    let buyPrice:Double?
+    let sellPrice:Double?
+    let variation:Double?
+    let timeStamp:Date?
+    
+}

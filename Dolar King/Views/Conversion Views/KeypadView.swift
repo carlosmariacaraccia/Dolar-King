@@ -16,7 +16,8 @@ struct KeypadView: View {
         [.seven, .eight, .nine],
         [.four, .five, .six],
         [.one, .two, .three],
-        [.decimal, .zero, .backspace]]
+        [.decimal, .zero, .backspace]
+    ]
     
     var buttonWidth:CGFloat {
         // we will have 3 buttons per row and we will leave 5 pts of padding from each side of them (endings).

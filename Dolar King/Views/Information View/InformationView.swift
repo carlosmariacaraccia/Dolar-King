@@ -10,7 +10,7 @@ import Combine
 
 struct InformationView: View {
     
-    var cotizationes:[Cotizacion]
+    var currencies:[CurrencyObject]
         
     var body: some View {
         
@@ -31,19 +31,17 @@ struct InformationView: View {
                     .opacity(0.6)
             }
             ScrollView {
-                ForEach(cotizationes, id:\.self.casa!.nombre) { cotizacion in
-                    CotizacionesCell(cotizacion: cotizacion)
+                ForEach(currencies, id:\.self.name) { currency in
+                    CotizacionesCell(currency: currency)
                         .padding(10)
                 }
             }
         }
-        .background(Color(hex:"E3E8FF").opacity(0.7))
     }
-
 }
 
 struct InformationView_Previews: PreviewProvider {
     static var previews: some View {
-        InformationView(cotizationes: [Cotizacion]())
+        InformationView(currencies: [CurrencyObject]())
     }
 }

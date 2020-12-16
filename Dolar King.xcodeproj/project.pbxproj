@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		1F24EDDE2587B85100C2D0E9 /* KeypadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F24EDDD2587B85100C2D0E9 /* KeypadModel.swift */; };
 		1F24EDE32587B87900C2D0E9 /* KeypadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F24EDE22587B87900C2D0E9 /* KeypadViewModel.swift */; };
 		1F24EDEB2587BE5400C2D0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F24EDEA2587BE5400C2D0E9 /* Assets.xcassets */; };
+		1F3BB8BE2588CFD600AF1979 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 1F3BB8BD2588CFD600AF1979 /* SwiftSoup */; };
 		1F700B55257AAEC0000F496B /* OCR-ABT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B50257AAEA0000F496B /* OCR-ABT.ttf */; };
 		1F700B56257AAEC0000F496B /* ocr-a bt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B52257AAEA0000F496B /* ocr-a bt.ttf */; };
 		1F700B57257AAEC0000F496B /* OCR-A Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B51257AAEA0000F496B /* OCR-A Regular.ttf */; };
@@ -81,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F3BB8BE2588CFD600AF1979 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,8 +218,8 @@
 		1FA849062583BC5A0072C597 /* Information View */ = {
 			isa = PBXGroup;
 			children = (
-				1FA849002583BA5C0072C597 /* InformationView.swift */,
 				1FA848F32583853B0072C597 /* CotizacionesCellView.swift */,
+				1FA849002583BA5C0072C597 /* InformationView.swift */,
 			);
 			path = "Information View";
 			sourceTree = "<group>";
@@ -238,6 +240,9 @@
 			dependencies = (
 			);
 			name = "Dolar King";
+			packageProductDependencies = (
+				1F3BB8BD2588CFD600AF1979 /* SwiftSoup */,
+			);
 			productName = "Dolar King";
 			productReference = 1F018437257978A300EE1E53 /* Dolar King.app */;
 			productType = "com.apple.product-type.application";
@@ -309,6 +314,9 @@
 				Base,
 			);
 			mainGroup = 1F01842E257978A200EE1E53;
+			packageReferences = (
+				1F3BB8BC2588CFD600AF1979 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			productRefGroup = 1F018438257978A300EE1E53 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -686,6 +694,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1F3BB8BC2588CFD600AF1979 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1F3BB8BD2588CFD600AF1979 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F3BB8BC2588CFD600AF1979 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1F01842F257978A200EE1E53 /* Project object */;
 }

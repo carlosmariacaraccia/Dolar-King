@@ -14,14 +14,14 @@ struct MainView: View {
     
     var body: some View {
         TabView {
-            InformationView(cotizationes: buscadorDeCotizaciones.cotizaciones)
+            InformationView(currencies: buscadorDeCotizaciones.currencyObjects)
                 .tabItem {
                     Image("graph25")
                         .renderingMode(.template)
                         .padding()
                     Text("Information")
                 }
-            ConversionView(cotizaciones: buscadorDeCotizaciones.cotizaciones)
+            ConversionView(currencies: buscadorDeCotizaciones.currencyObjects)
                 .environmentObject(DisplayShower())
                 .tabItem {
                     Image("calculator25")
@@ -31,7 +31,7 @@ struct MainView: View {
                 }
         }
         .onAppear(perform: {
-            buscadorDeCotizaciones.getCotizaciones()
+            buscadorDeCotizaciones.useDolarHoy()
         })
     }
 }
