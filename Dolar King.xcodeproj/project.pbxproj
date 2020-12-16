@@ -65,8 +65,8 @@
 		1F24EDDD2587B85100C2D0E9 /* KeypadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadModel.swift; sourceTree = "<group>"; };
 		1F24EDE22587B87900C2D0E9 /* KeypadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadViewModel.swift; sourceTree = "<group>"; };
 		1F24EDEA2587BE5400C2D0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1F652E7F258A4AB700B2545C /* CurrencyConverterScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CurrencyConverterScreen.png; sourceTree = "<group>"; };
-		1F652E80258A4AB700B2545C /* MainScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainScreen.png; sourceTree = "<group>"; };
+		1F652E87258A4F6800B2545C /* MainScreenOK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainScreenOK.png; sourceTree = "<group>"; };
+		1F652E88258A4F6800B2545C /* CurrencyConverterScreenOk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CurrencyConverterScreenOk.png; sourceTree = "<group>"; };
 		1F700B50257AAEA0000F496B /* OCR-ABT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR-ABT.ttf"; sourceTree = "<group>"; };
 		1F700B51257AAEA0000F496B /* OCR-A Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR-A Regular.ttf"; sourceTree = "<group>"; };
 		1F700B52257AAEA0000F496B /* ocr-a bt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ocr-a bt.ttf"; sourceTree = "<group>"; };
@@ -109,8 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				1F0184682579790500EE1E53 /* README.md */,
-				1F652E7F258A4AB700B2545C /* CurrencyConverterScreen.png */,
-				1F652E80258A4AB700B2545C /* MainScreen.png */,
+				1F652E88258A4F6800B2545C /* CurrencyConverterScreenOk.png */,
+				1F652E87258A4F6800B2545C /* MainScreenOK.png */,
 				1F018439257978A300EE1E53 /* Dolar King */,
 				1F01844B257978A600EE1E53 /* Dolar KingTests */,
 				1F018456257978A600EE1E53 /* Dolar KingUITests */,
