@@ -32,9 +32,13 @@ struct ConversionView: View {
     var body: some View {
         
         VStack {
+            Text("Currency Converter")
+                .font(.system(size: 30, weight: .semibold, design: .default))
+                .shadow(color: .gray, radius: 4, x:0.0 , y: 8)
+                .opacity(0.7)
             Spacer()
             Text("Exchange selector")
-                .font(.system(size: 20))
+                .font(.system(size: 15))
                 .opacity(0.7)
             Picker(selection: $chooseExchangeToConvert, label: Text("")) {
                 ForEach(exchangeCurrencySelection, id:\.self) { currency in
@@ -50,9 +54,13 @@ struct ConversionView: View {
             .padding(10)
             HStack {
                 Text(chooseExchangeToConvert == "Pesos to USD" ? "ARS" : "USD")
+                    .padding(.leading, 10)
                 Spacer()
                 Text(displayShower.display)
             }
+            .background(Color.init(hex: "F2F6FF").opacity(0.6))
+            .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 0.5))
+            .shadow(color: Color(hex:"EFF1F5"), radius: 4, x:0.0 , y: 8)
             .opacity(0.7)
             .font(.system(size: 40))
             Spacer()
@@ -93,19 +101,19 @@ struct ConversionView: View {
         if fromPesosToUSD == "Pesos to USD" {
             switch tipoDeDolar {
             case .blue:
-                let result = amountInDouble / currencies.filter{$0.name!.contains("Blue")}.first!.sellPrice!
+                let result = amountInDouble / currencies.filter{$0.name?.contains("Blue") ?? false }.first!.sellPrice!
                 return String(format: "%.2f", result)
             case .oficial:
-                let result = amountInDouble / currencies.filter{$0.name!.contains("ofi")}.first!.sellPrice!
+                let result = amountInDouble / currencies.filter{$0.name?.contains("ofi") ?? false}.first!.sellPrice!
                 return String(format: "%.2f", result)
             }
         } else {
             switch tipoDeDolar {
             case .blue:
-                let result = amountInDouble * currencies.filter{$0.name!.contains("Blue")}.first!.buyPrice!
+                let result = amountInDouble * currencies.filter{$0.name?.contains("Blue") ?? false}.first!.buyPrice!
                 return String(format: "%.2f", result)
             case .oficial:
-                let result = amountInDouble * currencies.filter{$0.name!.contains("ofi")}.first!.buyPrice!
+                let result = amountInDouble * currencies.filter{$0.name?.contains("ofi") ?? false}.first!.buyPrice!
                 return String(format: "%.2f", result)
             }
 

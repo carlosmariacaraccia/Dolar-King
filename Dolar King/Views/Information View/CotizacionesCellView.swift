@@ -11,6 +11,12 @@ struct CotizacionesCell:View {
     
     @State private var currency:CurrencyObject
     
+    private var dateFormatter:DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.timeStyle = .medium
+        return formatter
+    }
     
     init (currency:CurrencyObject) {
         self._currency = State(wrappedValue: currency)
@@ -38,11 +44,10 @@ struct CotizacionesCell:View {
     
     var body: some View {
         if currencySelector(currency: currency) == (nil,nil) {
-            EmptyView()
+            ProgressView()
         } else  {
-            HStack(spacing:30) {
-                
-                HStack {
+            HStack {
+                HStack(spacing:10) {
                     Image(uiImage: (currencySelector(currency: currency).0 ?? UIImage(systemName: "rectangle"))!)
                         .resizable()
                         .frame(width:40, height: 40)
@@ -52,19 +57,21 @@ struct CotizacionesCell:View {
                         .opacity(0.6)
                 }
                 Spacer()
-                HStack {
-                    VStack {
-                        Text(String(format:"%.2f", currency.buyPrice ?? 0.00))
-                        Text(String(format:"%.2f", currency.sellPrice ?? 0.00))
-                            .foregroundColor(.black)
-                            .opacity(0.6)
-                        
-                        Text("\(currency.variation ?? 0.000)")
-                            .foregroundColor((currency.variation ?? 0.00) < 0 ? .red : .green)
-                            .opacity(0.9)
-                    }
-                    .font(.system(size: 15))
+                VStack(alignment:.center) {
+                    Text(currency.variation == nil ? "0.000" : String(format:"%.2f", currency.variation!))
+                        .foregroundColor((currency.variation ?? 0.00) < 0 ? .red : .green)
+                        .opacity(0.9)
+                    Text(dateFormatter.string(from: currency.timeStamp!))
+                        .font(.system(size: 10, weight: .light, design: .default))
                 }
+                .padding(.trailing, 5)
+                VStack(alignment:.center) {
+                    Text(currency.buyPrice == nil ? "No cotiza" : String(format:"%.3f", currency.buyPrice!))
+                    Text(currency.sellPrice == nil ? "No cotiza" : String(format:"%.3f", currency.sellPrice!))
+                        .foregroundColor(.black)
+                }
+                .font(.system(size: 15))
+                .opacity(0.6)
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 5)
@@ -72,7 +79,12 @@ struct CotizacionesCell:View {
             .cornerRadius(10)
             .shadow(color: Color(hex:"EFF1F5"), radius: 4, x:0.0 , y: 8)
         }
-        
     }
-    
+}
+
+struct CotizacionesCellView_Preview: PreviewProvider {
+    static var previews: some View {
+        let curr = CurrencyObject(name: "Bolsa", buyPrice: 10, sellPrice: 20, variation: 0.05, timeStamp: Date())
+        return CotizacionesCell(currency: curr)
+    }
 }

@@ -15,9 +15,7 @@ struct Cotizacion:Codable {
         let compra, venta, agencia, nombre: String?
         let variacion, ventaCero, decimales, mejorCompra: String?
         let mejorVenta, fecha, recorrido: String?
-        
     }
-
 }
 
 // Custom object for parsing
@@ -28,5 +26,4 @@ struct CurrencyObject {
     let sellPrice:Double?
     let variation:Double?
     let timeStamp:Date?
-    
 }
