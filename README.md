@@ -8,4 +8,7 @@
 
 
 
+### Packages used: Swift Soup
+
+Simple app to check the constantly changing value of the us dolar expressed in Argentinian pesos.
 
