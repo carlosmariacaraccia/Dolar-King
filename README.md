@@ -2,11 +2,14 @@
 
 ### Simple app to know the daily argentinian dolar cotizations and keep track of your purchases
 
-![alt text](https://github.com/carlosmariacaraccia/Dolar-King/blob/main/MainScreenOK.png?raw=true){:height="50%" width="50%"}
-
-![alt text](https://github.com/carlosmariacaraccia/Dolar-King/blob/main/CurrencyConverterScreenOk.png?raw=true){:height="50%" width="50%"}
-
-
+<div class="row">
+  <div class="column">
+    <img src="CurrencyConverterScreenOk.png" width=200 style="float: right;" />
+  </div>
+  <div class="column">
+    <img src="MainScreenOK.png" width=200 style="float: right;" />
+  </div>
+</div>
 
 ### Packages used: Swift Soup
 
