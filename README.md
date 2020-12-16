@@ -4,7 +4,7 @@
 
 ![alt text](https://github.com/carlosmariacaraccia/Dolar-King/blob/main/MainScreenOK.png?raw=true)
 
-![alt text](https://github.com/carlosmariacaraccia/Dolar-King/blob/main/CurrencyConverterScreenOK.png?raw=true)
+![alt text](https://github.com/carlosmariacaraccia/Dolar-King/blob/main/CurrencyConverterScreenOk.png?raw=true)
 
 
 
