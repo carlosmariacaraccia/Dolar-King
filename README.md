@@ -4,10 +4,10 @@
 
 <div class="row">
   <div class="column">
-    <img src="CurrencyConverterScreenOk.png" width=200 style="float: right;" />
-  </div>
-  <div class="column">
-    <img src="MainScreenOK.png" width=200 style="float: right;" />
+    <p align=center>
+      <img src="CurrencyConverterScreenOk.png" width=200 />
+      <img src="MainScreenOK.png" width=200 />
+    </p>
   </div>
 </div>
 
