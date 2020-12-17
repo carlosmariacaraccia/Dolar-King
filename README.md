@@ -1,4 +1,5 @@
 #  Dolar King
+      <img src="DolarKing.png" width=200 />
 
 ### Simple app to know the daily argentinian dolar cotizations and keep track of your purchases
 
