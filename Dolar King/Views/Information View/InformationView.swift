@@ -10,7 +10,7 @@ import Combine
 
 struct InformationView: View {
     
-    var currencies:[CurrencyObject]
+    @EnvironmentObject var buscardorDeCotizaciones:BuscadorDeCotizaciones
         
     var body: some View {
         
@@ -30,18 +30,17 @@ struct InformationView: View {
                     .offset(y: -20)
                     .opacity(0.6)
             }
-            ScrollView {
-                ForEach(currencies, id:\.self.name) { currency in
-                    CotizacionesCell(currency: currency)
-                        .padding(10)
-                }
+            
+            GeometryReader { geometry in
+                CustomScrollView(width: geometry.size.width, height: geometry.size.height).environmentObject(buscardorDeCotizaciones)
             }
+
         }
     }
 }
 
 struct InformationView_Previews: PreviewProvider {
     static var previews: some View {
-        InformationView(currencies: [CurrencyObject]())
+        InformationView().environmentObject(BuscadorDeCotizaciones())
     }
 }

@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct CustomListView: View {
+    
+    @EnvironmentObject var buscardorDeCotizaciones:BuscadorDeCotizaciones
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(buscardorDeCotizaciones.currencyObjects, id:\.self.name!) { currency in
+                CotizacionesCell(currency: currency)
+            }
+        }
     }
 }
 
-struct CustomListView_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomListView()
-    }
-}

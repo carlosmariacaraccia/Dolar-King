@@ -15,6 +15,7 @@ class BuscadorDeCotizaciones:ObservableObject {
     
     @Published var currencyObjects = [CurrencyObject]()
     
+    /// Any cancellable objects to store the 
     private var cancellable:AnyCancellable?
     
     
@@ -37,8 +38,13 @@ class BuscadorDeCotizaciones:ObservableObject {
             })
     }
     
+    
+    
+    
+    /// Function to parse the returned strings from the network
+    /// - Parameter inputString: the string returned from the call
+    /// - Returns: a currency object already formated to be used in views
     private func convertElementsToCurrency(inputString:String) -> CurrencyObject  {
-        
         var variacion:Double?
         var sellingPrice:Double?
         var name:String?

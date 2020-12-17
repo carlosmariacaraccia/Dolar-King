@@ -18,6 +18,8 @@
 		1F24EDE32587B87900C2D0E9 /* KeypadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F24EDE22587B87900C2D0E9 /* KeypadViewModel.swift */; };
 		1F24EDEB2587BE5400C2D0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F24EDEA2587BE5400C2D0E9 /* Assets.xcassets */; };
 		1F3BB8BE2588CFD600AF1979 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 1F3BB8BD2588CFD600AF1979 /* SwiftSoup */; };
+		1F652E95258B6ADC00B2545C /* CustomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F652E94258B6ADC00B2545C /* CustomListView.swift */; };
+		1F652E9A258B87AF00B2545C /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F652E99258B87AF00B2545C /* CustomScrollView.swift */; };
 		1F700B55257AAEC0000F496B /* OCR-ABT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B50257AAEA0000F496B /* OCR-ABT.ttf */; };
 		1F700B56257AAEC0000F496B /* ocr-a bt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B52257AAEA0000F496B /* ocr-a bt.ttf */; };
 		1F700B57257AAEC0000F496B /* OCR-A Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F700B51257AAEA0000F496B /* OCR-A Regular.ttf */; };
@@ -67,6 +69,8 @@
 		1F24EDEA2587BE5400C2D0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F652E87258A4F6800B2545C /* MainScreenOK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainScreenOK.png; sourceTree = "<group>"; };
 		1F652E88258A4F6800B2545C /* CurrencyConverterScreenOk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CurrencyConverterScreenOk.png; sourceTree = "<group>"; };
+		1F652E94258B6ADC00B2545C /* CustomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListView.swift; sourceTree = "<group>"; };
+		1F652E99258B87AF00B2545C /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		1F700B50257AAEA0000F496B /* OCR-ABT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR-ABT.ttf"; sourceTree = "<group>"; };
 		1F700B51257AAEA0000F496B /* OCR-A Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OCR-A Regular.ttf"; sourceTree = "<group>"; };
 		1F700B52257AAEA0000F496B /* ocr-a bt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ocr-a bt.ttf"; sourceTree = "<group>"; };
@@ -223,6 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				1FA848F32583853B0072C597 /* CotizacionesCellView.swift */,
+				1F652E94258B6ADC00B2545C /* CustomListView.swift */,
+				1F652E99258B87AF00B2545C /* CustomScrollView.swift */,
 				1FA849002583BA5C0072C597 /* InformationView.swift */,
 			);
 			path = "Information View";
@@ -369,8 +375,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F01843D257978A300EE1E53 /* MainView.swift in Sources */,
+				1F652E95258B6ADC00B2545C /* CustomListView.swift in Sources */,
 				1F24EDDE2587B85100C2D0E9 /* KeypadModel.swift in Sources */,
 				1FA849012583BA5D0072C597 /* InformationView.swift in Sources */,
+				1F652E9A258B87AF00B2545C /* CustomScrollView.swift in Sources */,
 				1F24EDE32587B87900C2D0E9 /* KeypadViewModel.swift in Sources */,
 				1FA0F90C2583E5F700865D8C /* KeypadView.swift in Sources */,
 				1F700B5E257ABD36000F496B /* FoundationExtensions.swift in Sources */,

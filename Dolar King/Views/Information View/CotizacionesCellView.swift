@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CotizacionesCell:View {
     
-    @State private var currency:CurrencyObject
+    var currency:CurrencyObject
     
     private var dateFormatter:DateFormatter {
         let formatter = DateFormatter()
@@ -19,7 +19,7 @@ struct CotizacionesCell:View {
     }
     
     init (currency:CurrencyObject) {
-        self._currency = State(wrappedValue: currency)
+        self.currency = currency
     }
     
     private func currencySelector(currency:CurrencyObject) -> (UIImage?,String?) {

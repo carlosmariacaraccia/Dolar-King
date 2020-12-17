@@ -14,7 +14,7 @@ struct MainView: View {
     
     var body: some View {
         TabView {
-            InformationView(currencies: buscadorDeCotizaciones.currencyObjects)
+            InformationView().environmentObject(buscadorDeCotizaciones)
                 .tabItem {
                     Image("graph25")
                         .renderingMode(.template)
