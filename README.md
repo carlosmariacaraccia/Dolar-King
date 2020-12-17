@@ -6,7 +6,7 @@
   <div class="column">
     <p align=center>
       <img src="MainScreenOK.png" width=200 />
-      <img src="CurrencyScreenOk.png" width=200 />
+      <img src="CurrencyConverterScreenOk.png" width=200 />
     </p>
   </div>
 </div>
