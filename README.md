@@ -1,5 +1,5 @@
-<img src="https://raw.githubusercontent.com/carlosmariacaraccia/Dolar-King/main/DolarKing.png" width="30px">
- #  Dolar King
+<img src="https://raw.githubusercontent.com/carlosmariacaraccia/Dolar-King/main/DolarKing.png" width="50px">
+ # Dolar King
 
 ### Simple app to know the daily argentinian dolar cotizations and keep track of your purchases
 
