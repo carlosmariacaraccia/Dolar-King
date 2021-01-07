@@ -1,4 +1,5 @@
-#  Dolar King
+<img src="https://raw.githubusercontent.com/carlosmariacaraccia/carlosmariacaraccia/master/DolarKing.png" width="30px">
+ #  Dolar King
 
 ### Simple app to know the daily argentinian dolar cotizations and keep track of your purchases
 
@@ -6,7 +7,7 @@
   <div class="column">
     <p align=center>
       <img src="MainScreenOK.png" width=200 />
-      <img src="CurrencyScreenOk.png" width=200 />
+      <img src="CurrencyConverterScreenOk.png" width=200 />
     </p>
   </div>
 </div>
